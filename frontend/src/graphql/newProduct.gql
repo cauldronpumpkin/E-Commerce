@@ -1,0 +1,5 @@
+mutation newProduct($credentials: ProductInput!) {
+    createProduct (credentials: $credentials) {
+        imgUrl
+    }    
+}
