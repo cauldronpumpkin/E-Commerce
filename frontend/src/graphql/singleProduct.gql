@@ -1,0 +1,12 @@
+query ($id: String!) {
+    singleProduct(id: $id) {
+        _id
+        name
+        author
+        imgUrl
+        price
+        genre
+        numberOfPages
+        purchasedBy
+    }
+}

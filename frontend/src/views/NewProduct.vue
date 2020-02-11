@@ -60,10 +60,10 @@ export default {
                 }
             }).then (() => {
                 this.loading = false;
-                let inputFields = document.getElementsByTagName('v-text-field');
-                for (var i = 0; i < inputFields.length; i++) {
-                    inputFields[i].value = "";
-                }
+                this.name = "";
+                this.author = "";
+                this.price = "";
+                this.numberOfPages = "";
             })
         }
     }

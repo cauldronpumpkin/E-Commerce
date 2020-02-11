@@ -31,7 +31,7 @@
       >
         PDF Store
       </v-toolbar-title> <v-spacer />
-      <v-btn icon large><v-icon large> mdi-cart </v-icon></v-btn>
+      <v-btn class="snipcart-checkout" icon large><v-icon large>mdi-cart-outline</v-icon><span class="snipcart-items-count"></span></v-btn>
     </v-app-bar>
     <v-content>
       <v-container fluid>

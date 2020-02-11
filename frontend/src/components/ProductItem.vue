@@ -5,7 +5,14 @@
             <v-btn rounded outlined v-on:click="openProduct()">View</v-btn>
         </div>
         <div class="addToCart">
-            <v-btn rounded outlined v-on:click="addToCart()">Add to Cart</v-btn>
+            <v-btn rounded outlined class="snipcart-add-item"
+                :data-item-id="_id"
+                :data-item-price="price"
+                data-item-url="www.google.com/"
+                :data-item-description="author"
+                :data-item-image="imgUrl"
+                :data-item-name="name"
+            >Add to Cart</v-btn>
         </div>
         <div class="card-body">
             <h4 class="card-text">{{ name }}</h4>
@@ -17,6 +24,8 @@
 </template>
 
 <script>
+import router from '../router';
+
 export default {
     name: "product-item",
     data: () => ({
@@ -39,7 +48,7 @@ export default {
     },
     methods: {
         openProduct() {
-            
+            router.push(`/product/${this._id}`);
         },
         addToCart() {
             var payload = {
@@ -84,6 +93,6 @@ export default {
         opacity: 1;
     }
     .card:hover img {
-        opacity: 0.5;
+        opacity: 0.3;
     }
 </style>

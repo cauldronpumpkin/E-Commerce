@@ -63,9 +63,10 @@ module.exports = buildSchema(`
     }
 
     type RootQuery {
-        getProducts(genre: String!, page: Float!)         : [Product]
-        getOrders(username: String!)        : [Order]
-        loginUser(credentials: UserInput)   : UserToken
+        getProducts(genre: String!, page: Float!)   : [Product]
+        singleProduct(id: String!)                  : Product
+        getOrders(username: String!)                : [Order]
+        loginUser(credentials: UserInput)           : UserToken
     }
 
     type RootMutation {

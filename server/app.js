@@ -19,8 +19,8 @@ const upload = multer({
     dest: './uploads/'
 });
 aws.config.update({
-    accessKeyId: "AKIAJ3VFQRWIBN4LPFKQ",
-    secretAccessKey: "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",
+    accessKeyId: "",
+    secretAccessKey: "",
     region: "ap-south-1"
 })
 

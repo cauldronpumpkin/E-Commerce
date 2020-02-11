@@ -23,6 +23,10 @@ module.exports = {
         return array.slice(from, to);
     },
     // Query
+    singleProduct: async (args) => {
+        return Product.findById(args.id);
+    },
+    // Query
     getOrders: async (args, req) => {
         if (!req.isAuth) {
             throw new Error('Not Authenticated!');
