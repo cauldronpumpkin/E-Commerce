@@ -51,11 +51,6 @@ module.exports = buildSchema(`
         numberOfPages   : Float!
     }
 
-    input UserInput {
-        username        : String!
-        password        : String!
-    }
-
     input OrderInput {
         orderedBy       : String!
         products        : [String!]!
@@ -66,7 +61,7 @@ module.exports = buildSchema(`
         getProducts(genre: String!, page: Float!)   : [Product]
         singleProduct(id: String!)                  : Product
         getOrders(username: String!)                : [Order]
-        loginUser(credentials: UserInput)           : UserToken
+        loginUser(username: String!, password: String!): UserToken
     }
 
     type RootMutation {

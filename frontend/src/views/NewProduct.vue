@@ -26,6 +26,7 @@
 
 <script>
 import axios from 'axios';
+import router from '../router';
 
 export default {
     data: () => ({
@@ -37,6 +38,11 @@ export default {
         numberOfPages: "",
         genre: "",
     }),
+    created() {
+        if(!localStorage.getItem('apollo-token')) {
+            router.push('/admin');
+        }
+    },
     methods: {
         selectFile() {
             this.file = this.$refs.img.files[0];

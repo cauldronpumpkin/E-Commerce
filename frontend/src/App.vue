@@ -21,7 +21,9 @@
         <v-img
           src="https://www.nicepng.com/png/detail/247-2475175_ecommerce-e-commerce-website-logo.png"
           class="my-03"
+          id="goHome"
           contain
+          v-on:click="walkOnHomeBoy()"
           width="80"
           height="80"
         ></v-img>
@@ -29,7 +31,7 @@
       <v-toolbar-title
         class="font-weight-bold"
       >
-        PDF Store
+        PDF lelo PDF
       </v-toolbar-title> <v-spacer />
       <v-btn class="snipcart-checkout" icon large><v-icon large>mdi-cart-outline</v-icon><span class="snipcart-items-count"></span></v-btn>
     </v-app-bar>
@@ -53,6 +55,7 @@
 
 <script>
 import SideBar from './components/SideBar.vue';
+import router from './router';
 
 export default {
   name: 'App',
@@ -63,5 +66,16 @@ export default {
   data: () => ({
     //
   }),
+  methods: {
+    walkOnHomeBoy: function() {
+      router.push('/');
+    }
+  }
 };
 </script>
+
+<style scoped>
+  #goHome :hover {
+    cursor: pointer;
+  }
+</style>

@@ -35,18 +35,16 @@
     data: () => ({
       item: 0,
       items: [
-        { icon: 'mdi-code-braces', text: 'NodeJS'},
-        { icon: 'mdi-code-brackets', text: 'VueJS'},
-        { icon: 'mdi-code-parentheses', text: 'GraphQL'},
-        { icon: 'mdi-code-tags', text: 'Bootstrap'},
-        { icon: 'mdi-math-norm', text: 'AWS S3'},
-        { icon: 'mdi-xml', text: 'Algolia'},        
-        { icon: 'mdi-currency-usd', text: 'PayPal' }
+        { icon: 'mdi-nodejs', text: 'NodeJS'},
+        { icon: 'mdi-vuejs', text: 'VueJS'},
+        { icon: 'mdi-graphql', text: 'GraphQL'},
+        { icon: 'mdi-bootstrap', text: 'Bootstrap'},
+        { icon: 'mdi-aws', text: 'AWS S3'},
+        { icon: 'mdi-cart', text: 'Snipcart'},
+        { icon: 'mdi-cloud-search', text: 'Algolia'},        
+        { icon: 'mdi-currency-usd', text: 'Stripe' }
       ]
     }),
-    created() {
-      console.log(this.user);
-    },
     methods: {
       logout: function () {
         location.reload();

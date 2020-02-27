@@ -19,8 +19,8 @@ const upload = multer({
     dest: './uploads/'
 });
 aws.config.update({
-    accessKeyId: "",
-    secretAccessKey: "",
+    accessKeyId: process.env.awsaccesskey,
+    secretAccessKey: process.env.awssecretkey,
     region: "ap-south-1"
 })
 
@@ -31,7 +31,8 @@ app.use(cors());
 app.use(auth);
 
 // connecting to mongodb
-mongoose.connect('mongodb+srv://ishu:mymellon@cluster0-equia.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://ishu:mymellon@cluster0-equia.mongodb.net/test?retryWrites=true&w=majority',
+{useNewUrlParser: true, useUnifiedTopology: true});
 db = mongoose.connection;
 db.on('error', err => {
     console.log('There was a db connection error');
@@ -50,9 +51,9 @@ app.use('/graphql', graphqlHttp({
 
 // image upload
 app.post('/upload', upload.single("file"), async (req, res) => {
-    // if (!req.isAuth) {
-    //     throw new Error("Not Authenticated!");
-    // }
+    if (!req.isAuth) {
+        throw new Error("Not Authenticated!");
+    }
     const s3 = new aws.S3();
     try {
         const now = new Date();
