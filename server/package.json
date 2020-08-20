@@ -11,7 +11,7 @@
   "dependencies": {
     "algoliasearch": "^4.0.2",
     "aws-sdk": "^2.614.0",
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
